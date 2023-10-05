@@ -1,0 +1,94 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartItem {
+    width: 600px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    margin: 20px;
+    padding: 0px 20px;
+}
+
+.cartItem .product-image {
+    width: 110px;
+}
+
+.cartItem .description {
+    width: 65%;
+    font-size: 18px;
+}
+
+.plus-btn {
+    background-color: green;
+    margin-left: 5px;
+}
+
+.minus-btn {
+    background-color: red;
+    margin-right: 5px;
+}
+
+.plus-btn, .minus-btn {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    border: none;
+}
+
+.countHandler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+.countHandler input {
+    height: 20px;
+    width: 40px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+
+.cart-item-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-item-delete img {
+    height: 30px;
+    width: 30px;
+}
+
+.continue-and-checkout {
+    margin-bottom: 80px;
+}
+
+.continue-and-checkout button {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(19, 19, 19);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.total-amount {
+    font-size: 20px;
+    font-weight: 550;
+    margin: 25px;
+}

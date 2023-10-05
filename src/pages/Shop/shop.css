@@ -1,0 +1,14 @@
+.shopWelcoming {
+    margin-top: 50px;
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: 2.2em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    padding: 0 5em;
+}

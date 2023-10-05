@@ -5,13 +5,14 @@ import "./navbar.css";
 
 export default function Navbar() {
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <div className="links">
         <Link to="/"> Rahaf's Shop </Link>
         <Link to="/cart">
           <ShoppingCart className="cart-icon" />
         </Link>
+        <Link to="/checkout"></Link>
       </div>
-    </div>
+    </nav>
   );
 }
