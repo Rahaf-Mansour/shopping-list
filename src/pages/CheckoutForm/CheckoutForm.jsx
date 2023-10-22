@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./checkout-form.css";
+import "./CheckoutForm.css";
 
 const CheckoutForm = ({ onSubmit }) => {
   const [name, setName] = useState("");

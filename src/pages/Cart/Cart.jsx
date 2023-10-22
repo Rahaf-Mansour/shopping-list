@@ -1,14 +1,13 @@
 import React, { useContext, useState } from "react";
 import { PRODUCTS } from "../../data/productsData";
 import { ShopContext } from "../../context/ShopContextProvider";
-import CartItem from "./CartItem";
+import CartItem from "../../components/CartItem/CartItem";
 import { useNavigate } from "react-router-dom";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
-import "./cart.css";
+import "./Cart.css";
 
 export default function Cart() {
-  const { cartItemCounter, getTotalCartAmount, checkout } =
-    useContext(ShopContext);
+  const { cartItemCounter, getTotalCartAmount } = useContext(ShopContext);
   const [showCheckoutForm, setShowCheckoutForm] = useState(false);
 
   const toggleCheckoutForm = () => {
@@ -25,10 +24,12 @@ export default function Cart() {
       <div>
         <h1>Your Cart Items: 🛒</h1>
       </div>
-      <div className="cart">
+      <div>
         {PRODUCTS.map((product) => {
-          if (cartItemCounter[product.id] !== 0)
+          if (cartItemCounter[product.id] !== 0) {
             return <CartItem data={product} />;
+          }
+          return null;
         })}
       </div>
       {totalAmount > 0 ? (
