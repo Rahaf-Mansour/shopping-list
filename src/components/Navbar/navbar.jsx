@@ -11,7 +11,6 @@ export default function Navbar() {
         <Link to="/cart">
           <ShoppingCart className="cart-icon" />
         </Link>
-        <Link to="/checkout"></Link>
       </div>
     </nav>
   );
