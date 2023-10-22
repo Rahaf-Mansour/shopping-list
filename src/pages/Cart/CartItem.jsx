@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/ShopContextProvider";
+import deleteIcon from "../../assets/icons/deleteIcon.png";
 
 export default function CartItem(props) {
   const { id, productName, productPrice, productImage } = props.data;
@@ -44,7 +45,7 @@ export default function CartItem(props) {
           >
             <img
               className="delete-icon"
-              src={require("../../assets/icons/deleteIcon.png")}
+              src={deleteIcon}
               alt="delete-icon"
             ></img>
           </button>
