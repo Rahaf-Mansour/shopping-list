@@ -3,7 +3,7 @@ import { PRODUCTS } from "../../data/productsData";
 import { ShopContext } from "../../context/ShopContextProvider";
 import CartItem from "../../components/CartItem/CartItem";
 import { useNavigate } from "react-router-dom";
-import CheckoutForm from "../CheckoutForm/CheckoutForm";
+import CheckoutForm from "../../components/CheckoutForm";
 import "./Cart.css";
 
 export default function Cart() {
