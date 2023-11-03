@@ -1,14 +1,26 @@
 .shopWelcoming {
-    margin-top: 50px;
-    margin-bottom: 70px;
-    text-align: center;
-    font-size: 2.2em;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  text-align: center;
+  font-size: 2em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .products-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
-    padding: 0 5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: minmax(250px, auto);
+  gap: 20px;
+  place-items: center;
+  padding: 0 5em;
+}
+
+@media screen and (max-width: 768px) {
+  .shopWelcoming {
+    font-size: 1.5em;
+  }
+  .products-container {
+    padding: 0 2.2em;
+  }
 }

@@ -10,7 +10,7 @@ export default function Shop() {
 
       <div className="products-container">
         {PRODUCTS.map((product) => (
-          <ProductItem data={product} />
+          <ProductItem key={product.id} data={product} />
         ))}
       </div>
     </div>
