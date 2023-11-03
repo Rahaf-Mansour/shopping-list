@@ -4,10 +4,10 @@ import { PRODUCTS } from "../data/productsData";
 export const ShopContext = React.createContext();
 
 function getDefaultProducts() {
-  let cartDefaultCounter = {};
-  for (let i = 1; i <= PRODUCTS.length; i++) {
-    cartDefaultCounter[i] = 0;
-  }
+  const cartDefaultCounter = {};
+  PRODUCTS.forEach((product) => {
+    cartDefaultCounter[product.id] = 0;
+  });
   return cartDefaultCounter;
 }
 
