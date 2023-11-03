@@ -1,40 +1,37 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/ShopContextProvider";
 import deleteIcon from "../../assets/icons/deleteIcon.png";
-import "./product-item.css";
+import "./ProductItem.css";
 
-export default function ProductItem(props) {
-  const { id, productName, productPrice, productImage } = props.data;
+export default function ProductItem({ data }) {
+  const { id, productName, productPrice, productImage } = data;
   const { addOneMoreItemToCart, cartItemCounter, deleteItemFromCart } =
     useContext(ShopContext);
+  const itemCount = cartItemCounter[id] > 0 && ` (${cartItemCounter[id]})`;
+
   return (
-    <div className="product">
+    <article className="product">
       <img src={productImage} alt={`product-${id}`} />
       <div className="description">
-        <p className="bold-product-name">{productName}</p>
-        <p className="product-price"> ${productPrice}</p>
-
+        <h2 className="bold-product-name">{productName}</h2>{" "}
+        <p className="product-price"> ${productPrice.toFixed(2)}</p>
         <div className="add-and-delete-buttons">
           <button
             className="add-to-cart-btn"
             onClick={() => addOneMoreItemToCart(id)}
+            aria-label={`Add ${productName} to cart`}
           >
-            Add To Cart{" "}
-            {cartItemCounter[id] > 0 && <> ({cartItemCounter[id]})</>}
+            Add To Cart{itemCount}
           </button>
-
           <button
             className="delete-cart-item-btn"
             onClick={() => deleteItemFromCart(id)}
+            aria-label={`Delete ${productName} from cart`}
           >
-            <img
-              className="delete-icon"
-              src={deleteIcon}
-              alt="delete-icon"
-            ></img>
+            <img className="delete-icon" src={deleteIcon} alt="Delete"></img>
           </button>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
