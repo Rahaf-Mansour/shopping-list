@@ -35,8 +35,7 @@ export default function Cart() {
       {totalAmount > 0 ? (
         <div className="continue-and-checkout">
           <p className="total-amount">
-            {" "}
-            Total Amount: ${totalAmount.toFixed(2)}{" "}
+            Total Amount: ${totalAmount.toFixed(2)}
           </p>
           <button onClick={continueShopping}> Continue Shopping </button>
           <button onClick={toggleCheckoutForm}> Checkout </button>
@@ -44,7 +43,13 @@ export default function Cart() {
       ) : (
         <h3> Your Shopping Cart is Empty! ☹️</h3>
       )}
-      {showCheckoutForm && <CheckoutForm onSubmit={handleCheckout} />}
+      {showCheckoutForm && (
+        <CheckoutForm
+          onSubmit={handleCheckout}
+          onCancel={toggleCheckoutForm}
+          setShowCheckoutForm={setShowCheckoutForm}
+        />
+      )}
     </div>
   );
 }
