@@ -17,7 +17,7 @@ export const PRODUCTS = [
   },
   {
     id: 2,
-    productName: "Macbook Pro 2022 (M1)",
+    productName: "MacBook Pro 2022 (M1)",
     productPrice: 2500,
     productImage: product2,
   },
@@ -29,7 +29,7 @@ export const PRODUCTS = [
   },
   {
     id: 4,
-    productName: "WLS Van Gogh Denim Jacket",
+    productName: "Denim Jacket",
     productPrice: 60,
     productImage: product4,
   },
@@ -59,7 +59,7 @@ export const PRODUCTS = [
   },
   {
     id: 9,
-    productName: "Addidas T-Shirt",
+    productName: "Adidas T-Shirt",
     productPrice: 40.0,
     productImage: product9,
   },
