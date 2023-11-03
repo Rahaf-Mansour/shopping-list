@@ -3,8 +3,8 @@ import { ShopContext } from "../../context/ShopContextProvider";
 import deleteIcon from "../../assets/icons/deleteIcon.png";
 import "./CartItem.css";
 
-export default function CartItem(props) {
-  const { id, productName, productPrice, productImage } = props.data;
+export default function CartItem({ data }) {
+  const { id, productName, productPrice, productImage } = data;
   const {
     cartItemCounter,
     addOneMoreItemToCart,
@@ -12,42 +12,56 @@ export default function CartItem(props) {
     deleteItemFromCart,
     updateCartItemCount,
   } = useContext(ShopContext);
+
+  const handleQuantityChange = (e) => {
+    const newCount = Number(e.target.value);
+    if (!isNaN(newCount) && newCount >= 0) {
+      updateCartItemCount(newCount, id);
+    }
+  };
+
   return (
     <div className="cartItem">
-      <img className="product-image" src={productImage} alt={`product-${id}`} />
+      <img
+        className="product-image"
+        src={productImage}
+        alt={`${productName}-product`}
+      />
       <div className="description">
         <p>
-          <b>{productName}</b>
+          <strong>{productName}</strong>
         </p>
-        <p> Price: ${productPrice}</p>
+        <p>Price: ${productPrice.toFixed(2)}</p>
         <div className="countHandler">
-          <div className="middle-buttons">
-            <button
-              className="minus-btn"
-              onClick={() => removeOneMoreItemFromCart(id)}
-            >
-              -
-            </button>
-            <input
-              value={cartItemCounter[id]}
-              onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
-            />
-            <button
-              className="plus-btn"
-              onClick={() => addOneMoreItemToCart(id)}
-            >
-              +
-            </button>
-          </div>
-
           <button
-            className="cart-item-delete"
+            className="minus-btn"
+            aria-label={`Remove one ${productName}`}
+            onClick={() => removeOneMoreItemFromCart(id)}
+          >
+            −
+          </button>
+          <input
+            type="number"
+            min="0"
+            value={cartItemCounter[id]}
+            onChange={handleQuantityChange}
+          />
+          <button
+            className="plus-btn"
+            aria-label={`Add one more ${productName}`}
+            onClick={() => addOneMoreItemToCart(id)}
+          >
+            +
+          </button>
+          <button
+            className="delete-cart-item-btn"
+            aria-label={`Delete ${productName} from cart`}
             onClick={() => deleteItemFromCart(id)}
           >
             <img
               className="delete-icon"
               src={deleteIcon}
-              alt="delete-icon"
+              alt={`Delete ${productName}`}
             ></img>
           </button>
         </div>

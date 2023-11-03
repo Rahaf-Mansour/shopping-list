@@ -24,7 +24,7 @@ export default function ProductItem(props) {
           </button>
 
           <button
-            className="cart-item-delete"
+            className="delete-cart-item-btn"
             onClick={() => deleteItemFromCart(id)}
           >
             <img
