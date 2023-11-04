@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/ShopContextProvider";
 import deleteIcon from "../../assets/icons/deleteIcon.png";
-import "./ProductItem.css";
+import "./style.css";
 
 export default function ProductItem({ data }) {
   const { id, productName, productPrice, productImage } = data;
