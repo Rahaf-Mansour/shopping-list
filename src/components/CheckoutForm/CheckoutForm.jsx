@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CheckoutForm.css";
+import "./style.css";
 
 const CheckoutForm = ({ onSubmit, onCancel, setShowCheckoutForm }) => {
   const [name, setName] = useState("");

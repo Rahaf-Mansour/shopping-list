@@ -4,7 +4,7 @@ import { PRODUCTS } from "../../data/productsData";
 import { ShopContext } from "../../context/ShopContextProvider";
 import CartItem from "../../components/CartItem/CartItem";
 import CheckoutForm from "../../components/CheckoutForm";
-import "./Cart.css";
+import "./style.css";
 
 export default function Cart() {
   const { cartItemCounter, getTotalCartAmount } = useContext(ShopContext);
